@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head><title>ManageUsers</title></head>
+  <body>
+    
+    id: <input type = "text" id = "id2"></input></br>
+    name: <input type = "text" id = "name"></input></br>
+    age: <input type = "text" id = "age"></input></br>
+    <button onclick = "updateUser()">Update User</button>
+    <br/> 
+    <script>
+      function updateUser() {
+        let xhttp = new XMLHttpRequest();
+        let url = "/api/user/"+document.getElementById("id2").value;
+        xhttp.open('PUT', url, true);
+        xhttp.setRequestHeader('Content-type', 'application/json');
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            alert(this.responseText);
+          }
+        };
+        xhttp.send(JSON.stringify({
+          name : document.getElementById("name").value,
+          age : document.getElementById("age").value
+        }));
+      };
+    </script>
+  </body>
+</html>

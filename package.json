@@ -1,0 +1,15 @@
+{
+  "name": "usersmanagement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yogesh Kurmi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "joi": "^14.3.1"
+  }
+}

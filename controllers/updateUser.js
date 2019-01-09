@@ -11,6 +11,7 @@ module.exports = function(router,usermodel){
     if(result.error)return res.status(400).send(result.error.details[0].message); 
   
     user.name = req.body.name;
+    user.age = req.body.age;
     res.send(`user updated `+JSON.stringify(user));
   })  
 };

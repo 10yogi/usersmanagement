@@ -12,8 +12,11 @@
         xhttp.open('POST', url, true);
         xhttp.setRequestHeader('Content-type', 'application/json');
         xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
+          if (this.readyState == 4 ){
+            if(this.status==200)
+              alert(` ${this.responseText}`);
+            else
+              alert(`error : ${this.status} message: ${this.responseText}`);
           }
         };
         xhttp.send(JSON.stringify({
